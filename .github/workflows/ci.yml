@@ -19,15 +19,14 @@ jobs:
     with:
       skip-pdk: true
 
-  # Only run release when pushing to main
+  # Only run release when pushing to main/master
   release:
     name: Release Module
-    # Only run on main branch (not on PRs or develop)
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only run on main/master branch (not on PRs or develop)
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     permissions:
       contents: write
       issues: write
       pull-requests: write
     uses: slauger/github-workflows/.github/workflows/puppet-module-release.yml@main
-    secrets:
-      github-token: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
