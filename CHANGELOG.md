@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [1.0.1](https://github.com/slauger/puppet-hello_world/compare/v1.0.0...v1.0.1) (2025-12-16)
+
+
+### Bug Fixes
+
+* **ci:** avoid duplicate validation runs ([3f55f9f](https://github.com/slauger/puppet-hello_world/commit/3f55f9f4be8b509bfc9e10a2f805349e7d9906f4))
+
 ## 1.0.0 (2025-12-16)
 
 
