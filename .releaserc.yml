@@ -6,7 +6,11 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - - "@semantic-release/changelog"
     - changelogFile: "CHANGELOG.md"
-      changelogTitle: "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+      changelogTitle: |
+        # Changelog
+
+        All notable changes to this project will be documented in this file.
+        See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
   - - "@google/semantic-release-replace-plugin"
     - replacements:
         - files:
