@@ -24,6 +24,10 @@ jobs:
     name: Release Module
     # Only run on main branch (not on PRs or develop)
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     uses: slauger/github-workflows/.github/workflows/puppet-module-release.yml@main
     with:
       puppet-version: "7"
