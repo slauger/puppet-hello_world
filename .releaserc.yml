@@ -1,0 +1,59 @@
+branches:
+  - main
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - - "@semantic-release/changelog"
+    - changelogFile: "CHANGELOG.md"
+      changelogTitle: "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+  - - "@google/semantic-release-replace-plugin"
+    - replacements:
+        - files:
+            - "metadata.json"
+          from: '"version": ".*"'
+          to: '"version": "${nextRelease.version}"'
+          results:
+            - file: "metadata.json"
+              hasChanged: true
+              numMatches: 1
+              numReplacements: 1
+          countMatches: true
+  - - "@semantic-release/git"
+    - assets:
+        - "CHANGELOG.md"
+        - "metadata.json"
+      message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+  - "@semantic-release/github"
+
+preset: "conventionalcommits"
+releaseRules:
+  - type: "feat"
+    release: "minor"
+  - type: "fix"
+    release: "patch"
+  - type: "perf"
+    release: "patch"
+  - type: "refactor"
+    release: "patch"
+  - type: "docs"
+    release: false
+  - type: "style"
+    release: false
+  - type: "test"
+    release: false
+  - type: "build"
+    release: false
+  - type: "ci"
+    release: false
+  - type: "chore"
+    release: false
+  - type: "revert"
+    release: "patch"
+  - breaking: true
+    release: "major"
+
+writerOpts:
+  groupBy: "type"
+  commitGroupsSort: "title"
+  commitsSort: "header"

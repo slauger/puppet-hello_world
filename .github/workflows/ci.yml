@@ -1,0 +1,33 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  # Run validation on all branches (develop, main, and PRs)
+  validate:
+    name: Validate Module
+    uses: slauger/github-workflows/.github/workflows/puppet-module-validate.yml@main
+    with:
+      puppet-version: "7"
+      ruby-version: "3.1"
+
+  # Only run release when pushing to main
+  release:
+    name: Release Module
+    # Only run on main branch (not on PRs or develop)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    uses: slauger/github-workflows/.github/workflows/puppet-module-release.yml@main
+    with:
+      puppet-version: "7"
+      ruby-version: "3.1"
+      node-version: "20"
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}

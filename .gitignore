@@ -1,0 +1,29 @@
+# Puppet specific
+pkg/
+*.tar.gz
+
+# PDK
+.pdkignore
+.fixtures.yml
+
+# RSpec / Coverage
+spec/fixtures/
+coverage/
+.rspec_system
+.bundle/
+vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (for semantic-release)
+node_modules/
+package-lock.json
