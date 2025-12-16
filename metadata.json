@@ -1,6 +1,6 @@
 {
   "name": "slauger-hello_world",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "slauger",
   "summary": "A simple Puppet module that creates a hello world file",
   "license": "Apache-2.0",

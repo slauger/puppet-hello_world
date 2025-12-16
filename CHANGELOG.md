@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [1.0.2](https://github.com/slauger/puppet-hello_world/compare/v1.0.1...v1.0.2) (2025-12-16)
+
+
+### Bug Fixes
+
+* remove quotes ([38472a3](https://github.com/slauger/puppet-hello_world/commit/38472a35507ba6c2fa05711edda735ec3b42dd01))
+* **style:** correct indentation and add missing newline ([d5b2a77](https://github.com/slauger/puppet-hello_world/commit/d5b2a77c37a565c527588ab71ab4638db06c3145))
+* **style:** correct puppet-lint violations ([4867b6e](https://github.com/slauger/puppet-hello_world/commit/4867b6e04b360c9b6ede0bfd12f616432f9219c0))
+* **yaml:** add document start to .releaserc.yml ([8901ea5](https://github.com/slauger/puppet-hello_world/commit/8901ea52e0b154f9eb7e5169f957d860d2c71c13))
+
 ## [1.0.1](https://github.com/slauger/puppet-hello_world/compare/v1.0.0...v1.0.1) (2025-12-16)
 
 
