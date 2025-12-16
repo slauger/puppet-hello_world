@@ -42,13 +42,13 @@
 #   Default: '0644'
 #
 class hello_world (
-  Enum['present', 'absent'] $ensure   = 'present',
-  Stdlib::Absolutepath      $filepath = '/hello-world.txt',
-  String                    $message  = 'Hello World from Puppet!',
-  String                    $owner    = 'root',
-  String                    $group    = 'root',
-  String                    $mode     = '0644',
-) {
+  Enum['present', 'absent'] $ensure='present',
+  Stdlib::Absolutepath $filepath='/hello-world.txt',
+  String $message='Hello World from Puppet!',
+  String $owner='root',
+  String $group='root',
+  String $mode='0644',
+  ) {
   # Validate that we have a message when ensure is present
   if $ensure == 'present' and empty($message) {
     fail('Parameter message cannot be empty when ensure is present')
@@ -56,15 +56,15 @@ class hello_world (
 
   # Create or remove the hello world file
   file { $filepath:
-    ensure  => $ensure,
-    owner   => $owner,
-    group   => $group,
-    mode    => $mode,
-    content => epp('hello_world/hello_world.epp', {
-      'message'   => $message,
-      'timestamp' => strftime('%Y-%m-%d %H:%M:%S'),
-      'hostname'  => $facts['networking']['fqdn'],
-    }),
+  ensure  => $ensure,
+  owner   => $owner,
+  group   => $group,
+  mode    => $mode,
+  content => epp('hello_world/hello_world.epp', {
+    'message'   => $message,
+    'timestamp' => strftime('%Y-%m-%d %H:%M:%S'),
+    'hostname'  => $facts['networking']['fqdn'],
+  }),
   }
 
   # Optional: notify when the file is managed
