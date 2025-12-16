@@ -19,6 +19,7 @@ jobs:
     with:
       puppet-version: "7"
       ruby-version: "3.1"
+      skip-pdk: true
 
   # Only run release when pushing to main
   release:
