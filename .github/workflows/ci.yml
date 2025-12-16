@@ -16,8 +16,6 @@ jobs:
   validate:
     name: Validate Module
     uses: slauger/github-workflows/.github/workflows/puppet-module-validate.yml@main
-    with:
-      skip-pdk: true
 
   # Only run release when pushing to main/master
   release:
