@@ -61,9 +61,9 @@ class hello_world (
     group   => $group,
     mode    => $mode,
     content => epp('hello_world/hello_world.epp', {
-      'message'   => $message,
-      'timestamp' => strftime('%Y-%m-%d %H:%M:%S'),
-      'hostname'  => $facts['networking']['fqdn'],
+        'message'   => $message,
+        'timestamp' => strftime('%Y-%m-%d %H:%M:%S'),
+        'hostname'  => $facts['networking']['fqdn'],
     }),
   }
 
@@ -74,4 +74,3 @@ class hello_world (
     }
   }
 }
-
