@@ -156,6 +156,14 @@ The file permissions in octal notation.
 
 Default: `'0644'`
 
+##### `backup`
+
+Data type: `Boolean`
+
+Whether to backup the file before replacing it.
+
+Default: `false`
+
 ## Limitations
 
 This module is compatible with:

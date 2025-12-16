@@ -41,6 +41,10 @@
 #   The file permissions in octal notation.
 #   Default: '0644'
 #
+# @param backup
+#   Whether to backup the file before replacing it.
+#   Default: false
+#
 class hello_world (
   Enum['present', 'absent'] $ensure   = 'present',
   Stdlib::Absolutepath      $filepath = '/hello-world.txt',
@@ -48,6 +52,7 @@ class hello_world (
   String                    $owner    = 'root',
   String                    $group    = 'root',
   String                    $mode     = '0644',
+  Boolean                   $backup   = false,
 ) {
   # Validate that we have a message when ensure is present
   if $ensure == 'present' and empty($message) {
@@ -60,6 +65,7 @@ class hello_world (
     owner   => $owner,
     group   => $group,
     mode    => $mode,
+    backup  => $backup,
     content => epp('hello_world/hello_world.epp', {
         'message'   => $message,
         'timestamp' => strftime('%Y-%m-%d %H:%M:%S'),
