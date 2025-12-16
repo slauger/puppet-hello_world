@@ -73,4 +73,8 @@ class hello_world (
       message => "Hello World file created at ${filepath}",
     }
   }
+
+  # This is a deliberately bad example with trailing whitespace
+  # And a line that's way too long to demonstrate that our linting pipeline will catch these kinds of style violations and prevent them from being merged
 }
+
